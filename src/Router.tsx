@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Login from "./component/Pages/Login";
 import Home from "./component/Pages/Home/index";
-import BadRoute  from "./component/Pages/PageNotFound";
+import BadRoute from "./component/Pages/PageNotFound";
 
 import _withLayout from "./component/Layout/Main";
 

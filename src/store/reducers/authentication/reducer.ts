@@ -59,7 +59,6 @@ const reducer: Reducer<AuthenticationState> = (
           loginFail: { ...payload.data.loginFail },
           isLoginSuccess: false,
         },
-      
       };
     }
     default: {
