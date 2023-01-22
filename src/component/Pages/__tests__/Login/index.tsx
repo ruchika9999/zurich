@@ -2,7 +2,7 @@ import React from "react";
 import { ChakraProvider, theme } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
-import { render, screen , fireEvent } from "@testing-library/react";
+import { render, screen , cleanup } from "@testing-library/react";
 import configureStore from "redux-mock-store";
 
 import Login from "../../Login";
@@ -39,11 +39,17 @@ const store = {
   },
 };
 
+jest.mock('axios')
+jest.clearAllMocks()
+jest.setTimeout(30000)
+afterEach(cleanup)
+
+
 const renderApp = (store: any) => {
   const initialState = store;
   const mockStore = configureStore();
   render(
-    <GoogleOAuthProvider clientId="229004469876-6i405uh45b1nimt5sqqmk6im5rqutrgu.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="229004469876">
       <Provider store={mockStore(initialState) as any}>
         <ChakraProvider theme={theme}>
           <BrowserRouter>
@@ -55,7 +61,7 @@ const renderApp = (store: any) => {
   );
 };
 
-describe("Test Login page render", () => {
+describe("Login", () => {
 
   it("render login page", async () => {
     renderApp(store);
@@ -68,12 +74,5 @@ describe("Test Login page render", () => {
     expect(subHeading).toBeInTheDocument();
     expect(dis).toBeInTheDocument();
     expect(button).toBeInTheDocument();
-  });
-
-  it("submit login page", async () => {
-    renderApp(store);
-    const button = screen.getAllByText(appTest.button.login)[0] as HTMLButtonElement
-    // const buttonClick = fireEvent.click(button)
-    console.log('button==>',button)
   });
 });

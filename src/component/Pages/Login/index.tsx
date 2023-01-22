@@ -60,7 +60,6 @@ const Login = () => {
               _hover={{
                 bg: "blue.300",
               }}
-              data-testId="Google-login"
             >
               Login With Google
             </Button>
