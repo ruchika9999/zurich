@@ -11,7 +11,6 @@ const Login = () => {
     bindActionCreators(action, useDispatch());
   const navigate = useNavigate();
 
-
   const login = useGoogleLogin({
     onSuccess: (response) => setAuthenticationSuccess({ response, navigate }),
     onError: (error) => setAuthenticationFailed(error),
@@ -42,9 +41,8 @@ const Login = () => {
             </Text>
           </Heading>
           <Text color={"gray.700"}>
-            Monetize your content by charging your most loyal readers and reward
-            them loyalty points. Give back to your loyal readers by granting
-            them access to your pre-releases and sneak-peaks.
+            The report you need to read to understand the risk landscape in 2023
+            and beyond.
           </Text>
           <Stack
             direction={"column"}
