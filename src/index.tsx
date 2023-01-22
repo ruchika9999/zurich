@@ -14,11 +14,11 @@ const root = ReactDOM.createRoot(
 const store = initStore;
 
 root.render(
-  // <React.StrictMode>
+  <React.StrictMode>
   <GoogleOAuthProvider clientId="229004469876-6i405uh45b1nimt5sqqmk6im5rqutrgu.apps.googleusercontent.com">
     <App store={store()} />
   </GoogleOAuthProvider>
-  // </React.StrictMode>
+  </React.StrictMode>
 );
 
 reportWebVitals();
