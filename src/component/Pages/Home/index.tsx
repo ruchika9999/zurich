@@ -1,10 +1,11 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
+import { useSelector, useDispatch } from "react-redux";
+import { Box, Spinner } from "@chakra-ui/react";
 
 import { filterUsersList } from "./../../../helper";
 import ListItem from "./../../List";
-import { Box, Spinner } from "@chakra-ui/react";
+
 import * as action from "../../../store/reducers/users/action";
 import { IState } from "../../../store/configureStore";
 import { User } from "../../../store/reducers/users/types";

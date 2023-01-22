@@ -6,25 +6,33 @@ import { IState } from "../../../store/configureStore";
 import { BACK_BUTTON_NAME, ROUTE } from "../../util/constant";
 import { useNavigate } from "react-router-dom";
 
-export const BadRoute = () => {
-  const [ buttonStatus , setButtonName ] = useState({ name : BACK_BUTTON_NAME.BACK_TO_HOME ,  route : ROUTE.HOME })  
+const BadRoute = () => {
+  const [buttonStatus, setButtonName] = useState({
+    name: BACK_BUTTON_NAME.BACK_TO_HOME,
+    route: ROUTE.HOME,
+  });
   const profile = useSelector((state: IState) => state.authentication.data);
-  const navigator =useNavigate();
+  const navigator = useNavigate();
 
-
-
-  useEffect(()=>{
-    if(profile?.isLoginSuccess){
-      setButtonName(state => ({ ...state , name : BACK_BUTTON_NAME.BACK_TO_HOME , route : ROUTE.HOME }))
-    }else{
-      setButtonName(state => ({ ...state , name : BACK_BUTTON_NAME.BACK_TO_LOGIN , route : ROUTE.LOGIN }))
+  useEffect(() => {
+    if (profile?.isLoginSuccess) {
+      setButtonName((state) => ({
+        ...state,
+        name: BACK_BUTTON_NAME.BACK_TO_HOME,
+        route: ROUTE.HOME,
+      }));
+    } else {
+      setButtonName((state) => ({
+        ...state,
+        name: BACK_BUTTON_NAME.BACK_TO_LOGIN,
+        route: ROUTE.LOGIN,
+      }));
     }
-  },[profile?.isLoginSuccess])
+  }, [profile?.isLoginSuccess]);
 
   const goBack = () => {
-    navigator(buttonStatus.route)
-  }
-
+    navigator(buttonStatus.route);
+  };
 
   return (
     <Container maxW={"3xl"}>
@@ -67,3 +75,5 @@ export const BadRoute = () => {
     </Container>
   );
 };
+
+export default BadRoute;

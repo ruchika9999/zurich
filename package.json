@@ -45,7 +45,8 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "axios": "axios/dist/node/axios.cjs"
+      "axios": "axios/dist/node/axios.cjs",
+      "seedrandom" : "seedrandom/dist"
     }
   },
   "browserslist": {

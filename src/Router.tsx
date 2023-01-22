@@ -2,12 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Login from "./component/Pages/Login";
 import Home from "./component/Pages/Home/index";
-import { BadRoute } from "./component/Pages/PageNotFound";
+import BadRoute  from "./component/Pages/PageNotFound";
 
 import _withLayout from "./component/Layout/Main";
 
-import withProtection from "./component/withProtection/withProtection";
-import withPublicRoute from "./component/withProtection/withPublicRoute";
+import withProtection from "./component/withRoute/withProtection";
+import withPublicRoute from "./component/withRoute/withPublicRoute";
 import { ROUTE } from "./component/util/constant";
 
 const withLayout = _withLayout();

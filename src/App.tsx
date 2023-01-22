@@ -6,11 +6,9 @@ import { theme } from "./theme/default";
 import Router from "./Router";
 import { IState } from "./store/configureStore";
 
-
 interface AppProps {
   store: Store<IState>;
 }
-
 
 const App: React.FC<AppProps> = ({ store }) => {
   return (
