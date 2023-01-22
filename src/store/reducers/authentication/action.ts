@@ -2,7 +2,11 @@ import { Dispatch } from "redux";
 
 import { GoogleAuth } from "../../../api/authentication";
 import { ROUTE } from "../../../component/util/constant";
-import { AuthenticationType, GoogleResponseSuccess , GoogleResponseFail } from "./types";
+import {
+  AuthenticationType,
+  GoogleResponseSuccess,
+  GoogleResponseFail,
+} from "./types";
 
 export const setAuthenticationSuccess = (authData: GoogleResponseSuccess) => {
   const { navigate, response } = authData;
@@ -32,11 +36,11 @@ export const setAuthenticationSuccess = (authData: GoogleResponseSuccess) => {
   };
 };
 
-export const setAuthenticationFailed = (error : GoogleResponseFail) => {
+export const setAuthenticationFailed = (error: GoogleResponseFail) => {
   return (dispatch: Dispatch) => {
     return dispatch({
       type: AuthenticationType.UNSUCCESS,
-      data : error
+      data: error,
     });
   };
 };

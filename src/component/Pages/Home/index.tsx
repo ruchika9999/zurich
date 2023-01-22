@@ -16,6 +16,11 @@ const Home = () => {
 
   React.useEffect(() => {
     fetchRequest();
+    //React StrictMode calls all Effects twice to make sure their
+    //cleanup/unmount handlers work as intended. You may need to change
+    //your effects accordingly, even if they have an empty dependency list
+    //and would normally not unmount before the site is closed.
+    //but its only happened in development mode
   }, []);
 
   return (
